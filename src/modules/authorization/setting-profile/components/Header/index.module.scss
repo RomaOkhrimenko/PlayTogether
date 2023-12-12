@@ -1,0 +1,20 @@
+.setting_profile_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 15px auto 100px;
+
+  h2 {
+    margin-top: 15px;
+    color: var(--color-white);
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 44.8px; /* 44.8px */
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+  }
+}

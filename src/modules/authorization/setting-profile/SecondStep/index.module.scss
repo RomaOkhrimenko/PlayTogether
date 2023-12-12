@@ -1,0 +1,13 @@
+.step_one {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__platforms {
+    margin-bottom: 100px;
+  }
+
+  &__button {
+    margin-left: auto;
+  }
+}
