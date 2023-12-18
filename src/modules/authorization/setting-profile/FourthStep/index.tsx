@@ -4,33 +4,30 @@ import styles from './index.module.scss';
 import HeaderImage from '@/assets/images/png/authorization/fill-profle-info.png';
 import SettingProfileHeader from '@/modules/authorization/setting-profile/components/Header';
 import TextField from '@/modules/authorization/setting-profile/FourthStep/components/TextField';
-import { useForm } from 'react-hook-form';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { fields } from '@/modules/authorization/setting-profile/FourthStep/constants';
 import GenderSelect from '@/modules/authorization/setting-profile/FourthStep/components/GenderSelect';
 import FileField from '@/modules/authorization/setting-profile/FourthStep/components/FileField';
 import TextAreaField from '@/modules/authorization/setting-profile/FourthStep/components/TextAreaField';
 import StepButton from '@/modules/authorization/setting-profile/components/StepButton';
-import { UserInfo } from '@/store/setting-profile/types';
 
 type Props = {
- onSubmitSettingProfile: (arg1: UserInfo) => void;
+ onSubmitSettingProfile: SubmitHandler<FieldValues>;
  backStep: () => void;
 };
 const FourthStep = ({ onSubmitSettingProfile, backStep }: Props) => {
  const {
   register,
   handleSubmit,
-  formState: { errors, isSubmitting },
+  formState: { errors },
   setValue,
   watch,
-  getValues,
  } = useForm();
 
  const nameValue = watch(fields.name, false);
  const nicknameValue = watch(fields.nickname, false);
  const genderValue = watch(fields.gender, false);
  const profilePictureValue = watch(fields.profilePictures, false);
- const dobValue = watch(fields.dob, false);
  const bioValue = watch(fields.bio, false);
  const onValidateName = () => {
   if (nameValue.length > 0) {

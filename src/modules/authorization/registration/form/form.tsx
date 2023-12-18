@@ -2,28 +2,52 @@ import styles from './form.module.scss';
 import Link from 'next/link';
 
 import InputText from '@/components/ui/FormElements/Inputs/FormInputText';
-import { FieldValues, useForm } from 'react-hook-form';
-import { emailRegExp } from '@/utils/regexps';
+import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AnimationWall from '@/components/animations/transitions/AnimationWall';
+import {
+ confirmPasswordReactHookFormField,
+ emailReactHookFormField,
+ passwordReactHookFormField,
+} from '@/modules/authorization/registration/constants';
 
 const RegistrationForm = () => {
  const {
   register,
   handleSubmit,
-  formState: { errors, isSubmitting },
-  reset,
+  formState: { errors },
   getValues,
  } = useForm();
  const router = useRouter();
  const [success, setSuccess] = useState(false);
- const onSubmit = async (data: FieldValues) => {
+ const onSubmit = async () => {
   setSuccess(true);
 
   setTimeout(() => {
    router.replace(`/setting-profile`);
   }, 1400);
+ };
+
+ const emailRegistrationField = {
+  ...register(emailReactHookFormField.inputType, {
+   required: emailReactHookFormField.requiredText,
+   pattern: emailReactHookFormField.emailPattern,
+  }),
+ };
+
+ const passwordRegistrationField = {
+  ...register(passwordReactHookFormField.inputType, {
+   required: passwordReactHookFormField.requiredText,
+  }),
+ };
+
+ const confirmPasswordRegistrationField = {
+  ...register(confirmPasswordReactHookFormField.inputType, {
+   required: confirmPasswordReactHookFormField.requiredText,
+   validate: (value) =>
+    value === getValues('password') || 'Пароль не співпадає',
+  }),
  };
 
  // @ts-ignore
@@ -34,13 +58,7 @@ const RegistrationForm = () => {
     <div className={styles.form_section}>
      <InputText
       isRequired
-      register={...register('email', {
-       required: 'Необхідно вести електорну адресу',
-       pattern: {
-        value: emailRegExp,
-        message: 'Будь ласка, введіть дійсну електронну адресу',
-       },
-      })}
+      register={emailRegistrationField}
       label={'Електронна адреса'}
       type="email"
       error={errors?.email?.message}
@@ -50,9 +68,7 @@ const RegistrationForm = () => {
     <div className={styles.form_section}>
      <InputText
       isRequired
-      register={...register('password', {
-       required: 'Необхідно вести пароль',
-      })}
+      register={passwordRegistrationField}
       label={'Пароль'}
       isSecure
       type={'password'}
@@ -63,11 +79,7 @@ const RegistrationForm = () => {
     <div className={styles.form_section}>
      <InputText
       isRequired
-      register={...register('confirmPassword', {
-       required: 'Необіхдно підтвердити пароль',
-       validate: (value) =>
-        value === getValues('password') || 'Пароль не співпадає',
-      })}
+      register={confirmPasswordRegistrationField}
       label={'Повторіть пароль'}
       isSecure
       type={'password'}

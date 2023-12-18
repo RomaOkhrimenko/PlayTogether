@@ -13,6 +13,8 @@
   margin-bottom: 50px;
   padding: 10px 0;
   overflow-y: auto;
+  max-height: 40vh;
+  min-height: 40vh;
 
   @media (max-width: 1280px) {
     padding: 0 30px;

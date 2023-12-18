@@ -12,7 +12,7 @@ type Props = {
  isRequired?: boolean;
  placeholder?: string;
  register: any;
- error: string | null | undefined;
+ error: string | null | undefined | any;
 };
 
 type InputTypeProps = 'password' | 'text' | 'email';
