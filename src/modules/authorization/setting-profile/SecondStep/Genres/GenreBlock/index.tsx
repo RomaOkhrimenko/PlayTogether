@@ -7,9 +7,9 @@ type Props = {
   handleSelectPlatform: (string) => void
   id: string
 }
-const PlatformBlock = ({ SvgComponent, name, active, handleSelectPlatform, id }: Props) => {
+const GenreBlock = ({ SvgComponent, name, active, handleSelectPlatform, id }: Props) => {
   return (
-    <div className={`${styles.platform} ${active ? styles.active : ''}`} onClick={() => handleSelectPlatform(id)}>
+    <div className={`${styles.genre} ${active ? styles.active : ''}`} onClick={() => handleSelectPlatform(id)}>
       <SvgComponent />
 
       <h3>{name}</h3>
@@ -17,4 +17,4 @@ const PlatformBlock = ({ SvgComponent, name, active, handleSelectPlatform, id }:
   );
 };
 
-export default PlatformBlock;
+export default GenreBlock;

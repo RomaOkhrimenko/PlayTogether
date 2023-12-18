@@ -1,35 +1,28 @@
-import type { ReactNode } from "react";
-import { NextResponse } from "next/server";
-import type { NextComponentType } from "next";
+import { NextComponentType } from 'next';
+import LoginPage from '@/app/authorization/login/page';
 
-// Оголошуємо тип для пропсів компонента Component
-type ComponentProps = {
-    // Оголошуємо необхідні пропси, які приймає Component
-    isLoggedIn: boolean;
-    // Додайте інші необхідні пропси тут
-};
+// @ts-ignore
+function withAuth<T extends IntrinsicAttributes>(
+ Component: NextComponentType<T>,
+) {
+ const Auth = (props: T) => {
+  // Login data added to props via redux-store (or use react context for example)
 
-function withAuth<T extends ComponentProps>(Component: NextComponentType<T>) {
-    const Auth = (props: T) => {
-        // Login data added to props via redux-store (або використовуйте react context, наприклад)
-        const { isLoggedIn } = props;
+  // If user is not logged in, return login component
+  if (true) {
+   return <LoginPage>dasdasdasd</LoginPage>;
+  }
 
-        // If user is not logged in, return login component
-        if (!isLoggedIn) {
-            return NextResponse.redirect('http://localhost:3000/authorization/login');
-        }
+  // If user is logged in, return original component
+  return <Component {...props} />;
+ };
 
-        // If user is logged in, return original component
+ // Copy getInitial props so it will run as well
+ if (Component.getInitialProps) {
+  Auth.getInitialProps = Component.getInitialProps;
+ }
 
-        return <Component />
-    };
-
-    // Copy getInitial props so it will run as well
-    if (Component.getInitialProps) {
-        Auth.getInitialProps = Component.getInitialProps;
-    }
-
-    return Auth;
+ return Auth;
 }
 
 export default withAuth;

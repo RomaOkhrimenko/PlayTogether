@@ -7,6 +7,9 @@
   background-color: rgba(#000, 0.6);
   opacity: 0;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &.active {
     opacity: 1;

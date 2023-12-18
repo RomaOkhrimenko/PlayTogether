@@ -2,7 +2,6 @@
 
 import styles from './index.module.scss';
 import { useState } from 'react';
-import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { InputStarSvg } from '@/assets/images/svg';
 
 type Props = {
@@ -17,7 +16,7 @@ type Props = {
 
 type InputTypeProps = 'password' | 'text' | 'email';
 
-const InputText = ({
+const InputTextArea = ({
  label,
  type = 'text',
  isSecure,
@@ -48,14 +47,7 @@ const InputText = ({
     className={styles.input_text__container}
     style={error ? errorStyle : {}}
    >
-    <input type={inputType} {...register} placeholder={placeholder} />
-
-    {isSecure && inputType === 'password' && (
-     <FiEyeOff size={20} onClick={() => handleInputType('text')} />
-    )}
-    {isSecure && inputType === 'text' && (
-     <FiEye size={20} onClick={() => handleInputType('password')} />
-    )}
+    <textarea {...register} placeholder={placeholder}></textarea>
    </div>
 
    {error && <span className={styles.input_text__error}>{error}</span>}
@@ -63,4 +55,4 @@ const InputText = ({
  );
 };
 
-export default InputText;
+export default InputTextArea;

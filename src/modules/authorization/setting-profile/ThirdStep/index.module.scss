@@ -1,5 +1,43 @@
-.step_one {
-  display: flex;
-  flex-direction: column;
+.step_three {
+  display: grid;
+  grid-template-rows: 300px auto 80px;
   width: 100%;
+  height: calc(100% - 109px);
+  padding-bottom: 100px;
+
+
+}
+
+.gamesContainer {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 10px 0;
+  overflow-y: auto;
+
+  @media (max-width: 1280px) {
+    padding: 0 30px;
+  }
+}
+
+.buttons {
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  @media (max-width: 554px) {
+    flex-direction: column;
+  }
+
+  &_navigation {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @media (max-width: 554px) {
+      padding-top: 20px;
+    }
+  }
 }

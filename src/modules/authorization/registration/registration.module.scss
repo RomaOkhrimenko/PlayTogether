@@ -8,6 +8,15 @@
   overflow: hidden;
 }
 
+.shadow {
+  width: 1px;
+  height: 100%;
+  box-shadow: 0 0 50px #000;
+  position: absolute;
+  left: calc(42%);
+  z-index: 10;
+}
+
 .man_image {
   position: absolute;
   right: 58%;
@@ -33,4 +42,3 @@
   position: relative;
   right: 20px;
 }
-

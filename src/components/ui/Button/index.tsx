@@ -1,15 +1,15 @@
 import React from 'react';
 
 type Props = {
-  onChange: (string) => void
-  value: string
-  placeholder: string
+  onClick: () => void
+  text: string
+  type?: 'button' | 'submit' | 'reset'
 }
 
-const Input = ({ onChange, value, placeholder }: Props) => {
+const Button = ({ onClick, text, type = 'button' }: Props) => {
   return (
-    <input type='text' onChange={onChange} value={value} placeholder={placeholder} />
+    <button type={type} onClick={onClick}>{text}</button>
   );
 };
 
-export default Input;
+export default Button;
