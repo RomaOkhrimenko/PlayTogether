@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 import HeaderImage from '@/assets/images/png/authorization/fill-profle-info.png';
 import SettingProfileHeader from '@/modules/authorization/setting-profile/components/Header';
 import TextField from '@/modules/authorization/setting-profile/FourthStep/components/TextField';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { fields } from '@/modules/authorization/setting-profile/FourthStep/constants';
 import GenderSelect from '@/modules/authorization/setting-profile/FourthStep/components/GenderSelect';
 import FileField from '@/modules/authorization/setting-profile/FourthStep/components/FileField';
@@ -12,7 +12,7 @@ import TextAreaField from '@/modules/authorization/setting-profile/FourthStep/co
 import StepButton from '@/modules/authorization/setting-profile/components/StepButton';
 
 type Props = {
- onSubmitSettingProfile: SubmitHandler<FieldValues>;
+ onSubmitSettingProfile: SubmitHandler<any>;
  backStep: () => void;
 };
 const FourthStep = ({ onSubmitSettingProfile, backStep }: Props) => {
@@ -21,7 +21,7 @@ const FourthStep = ({ onSubmitSettingProfile, backStep }: Props) => {
   handleSubmit,
   formState: { errors },
   setValue,
-  watch,
+  watch
  } = useForm();
 
  const nameValue = watch(fields.name, false);
@@ -83,10 +83,10 @@ const FourthStep = ({ onSubmitSettingProfile, backStep }: Props) => {
    <div className={styles.fourthStep_formContainer}>
     <TextField
      register={register}
-     fieldName={"Ім'я"}
+     fieldName={'Ім\'я'}
      error={errors?.[fields.name]?.message}
      inputType={fields.name}
-     requiredText={"Необхідно вести ваше ім'я"}
+     requiredText={'Необхідно вести ваше ім\'я'}
      placeholder={'Ярік'}
      number={'1'}
      value={nameValue}

@@ -20,17 +20,17 @@ type Props = {
 const genders = [
  { id: 1, image: MaleImage },
  { id: 2, image: FemaleImage },
- { id: 3, image: OtherImage },
+ { id: 3, image: OtherImage }
 ];
 const GenderSelect = ({
- onValidateField,
- number,
- value,
- fieldName,
- error,
-}: Props) => {
+                       onValidateField,
+                       number,
+                       value,
+                       fieldName,
+                       error
+                      }: Props) => {
  const [fieldState, setFieldState] = useState('text');
- const [chosenGender, setChosenGender] = useState<null | number>(null);
+ const [chosenGender, setChosenGender] = useState<null | number>(3);
 
  useEffect(() => {
   if (onValidateField) {

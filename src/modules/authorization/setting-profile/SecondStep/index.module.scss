@@ -5,6 +5,10 @@
 
   &__platforms {
     margin-bottom: 100px;
+
+    @media (max-width: 554px) {
+      margin-bottom: 70px;
+    }
   }
 
   &__buttons {
@@ -21,11 +25,20 @@
 
     @media (max-width: 768px) {
       padding-right: 0;
+      padding-bottom: 20px;
       justify-content: center;
 
       button {
         padding: 20px 80px;
         font-size: 22px;
+      }
+    }
+
+    @media (max-width: 554px) {
+      flex-direction: column-reverse;
+      button {
+        font-size: 18px;
+        padding: 15px 80px;
       }
     }
   }
