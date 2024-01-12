@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import styles from './index.module.scss';
 import { createPortal } from 'react-dom';
+import { ModalWrapper } from '@/components/ui/Modals/ModalWrapper/StyledComponents';
 
 type Props = {
-  open: boolean,
-  children: React.ReactNode
-}
+  open: boolean;
+  children: React.ReactNode;
+};
 
 const ModalContainer = ({ open, children }: Props) => {
   const ref = useRef<Element | null>(null);
@@ -16,8 +16,12 @@ const ModalContainer = ({ open, children }: Props) => {
     setMounted(true);
   }, []);
 
-  return (mounted && ref.current) ? createPortal(<div
-    className={`${styles.modalContainer} ${open ? styles.active : ''}`}>{children}</div>, ref.current!) : null;
+  return mounted && ref.current
+    ? createPortal(
+        <ModalWrapper active={open}>{children}</ModalWrapper>,
+        ref.current!,
+      )
+    : null;
 };
 
 export default ModalContainer;

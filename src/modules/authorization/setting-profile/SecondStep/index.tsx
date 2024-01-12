@@ -1,53 +1,58 @@
 'use client';
-import styles from './index.module.scss';
 import SettingProfileHeader from '../components/Header';
 import HeaderImage from '@/assets/images/png/authorization/three-hand-with-pencil.png';
 import Genres from '@/modules/authorization/setting-profile/SecondStep/Genres';
 import StepButton from '../components/StepButton';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { setGenresAction } from '@/modules/authorization/setting-profile/actions/genres';
+import {
+  ButtonContainer,
+  GenresWrapper,
+  Step,
+} from '@/modules/authorization/setting-profile/SecondStep/StyledComponents';
 
 type Props = {
- nextStep: () => void;
- backStep: () => void;
+  nextStep: () => void;
+  backStep: () => void;
 };
 
 const StepOne = ({ nextStep, backStep }: Props) => {
- const { genres } = useAppSelector((state) => state.settingProfile);
- const [selectedGenres, setSelectedGenres] = useState<string[]>(genres);
- const dispatch = useAppDispatch();
+  const { genres } = useAppSelector((state) => state.settingProfile);
+  const [selectedGenres, setSelectedGenres] = useState<string[]>(genres);
+  const dispatch = useAppDispatch();
 
- const onSave = () => {
-  dispatch(setGenresAction(selectedGenres));
-  nextStep();
- };
- return (
-  <motion.div
-   initial={{ opacity: 0, y: 20 }}
-   animate={{ opacity: 1, y: 0 }}
-   exit={{ opacity: 0, y: 20 }}
-   transition={{ duration: 1 }}
-   className={styles.second_step}
-  >
-   <SettingProfileHeader image={HeaderImage} title={'Оберіть улюблений жанр'} />
+  const onSave = () => {
+    dispatch(setGenresAction(selectedGenres));
+    nextStep();
+  };
+  return (
+    <Step
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 1 }}
+    >
+      <SettingProfileHeader
+        image={HeaderImage}
+        title={'Оберіть улюблений жанр'}
+      />
 
-   <div className={styles.second_step__platforms}>
-    <Genres setGenres={setSelectedGenres} savedGenres={genres} />
-   </div>
+      <GenresWrapper>
+        <Genres setGenres={setSelectedGenres} savedGenres={genres} />
+      </GenresWrapper>
 
-   <div className={styles.second_step__buttons}>
-    <StepButton onClick={backStep} name={'Назад'} />
-    <StepButton
-     onClick={onSave}
-     name={'Далі'}
-     accent
-     disable={!selectedGenres.length}
-    />
-   </div>
-  </motion.div>
- );
+      <ButtonContainer>
+        <StepButton onClick={backStep} name={'Назад'} />
+        <StepButton
+          onClick={onSave}
+          name={'Далі'}
+          accent
+          disable={!selectedGenres.length}
+        />
+      </ButtonContainer>
+    </Step>
+  );
 };
 
 export default StepOne;

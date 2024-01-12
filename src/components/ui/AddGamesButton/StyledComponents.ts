@@ -1,4 +1,6 @@
-.addGamesButton {
+import styled from 'styled-components';
+
+export const Button = styled.button`
   display: flex;
   align-items: center;
   padding: 1.7rem 4rem;
@@ -35,4 +37,4 @@
     height: 27px;
     transition: transform 0.3s;
   }
-}
+`;

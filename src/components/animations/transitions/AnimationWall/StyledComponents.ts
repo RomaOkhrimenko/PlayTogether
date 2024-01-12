@@ -1,4 +1,7 @@
-.wall {
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
+export const Wall = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
@@ -6,18 +9,18 @@
   height: 100%;
   pointer-events: none;
   z-index: 100000000;
-}
+`;
 
-.bg_green {
+export const BgGreen = styled(motion.div)`
   background-color: var(--green-color);
   width: 100%;
   position: absolute;
   bottom: 0;
-}
+`;
 
-.bg_main {
+export const BgMain = styled(motion.div)`
   background-color: var(--main-bg);
   width: 100%;
   position: absolute;
   bottom: 0;
-}
+`;

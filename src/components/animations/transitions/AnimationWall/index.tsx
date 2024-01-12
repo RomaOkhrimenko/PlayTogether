@@ -1,24 +1,25 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import styles from './index.module.scss';
+import {
+  BgGreen,
+  BgMain,
+  Wall,
+} from '@/components/animations/transitions/AnimationWall/StyledComponents';
 
 const AnimationWall = () => {
   return (
-    <div className={styles.wall}>
-      <motion.div
+    <Wall>
+      <BgGreen
         initial={{ height: 0 }}
         animate={{ height: '100%' }}
         transition={{ duration: 1.3, ease: 'linear' }}
-        className={styles.bg_green}
-      ></motion.div>
-      <motion.div
+      />
+      <BgMain
         initial={{ height: 0 }}
         animate={{ height: '100%' }}
         transition={{ duration: 1.3, ease: 'easeIn' }}
-        className={styles.bg_main}
-      ></motion.div>
-    </div>
+      />
+    </Wall>
   );
 };
 

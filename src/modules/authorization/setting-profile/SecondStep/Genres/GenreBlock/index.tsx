@@ -1,19 +1,25 @@
-import styles from './index.module.scss';
+import { Genre } from '@/modules/authorization/setting-profile/SecondStep/StyledComponents';
 
 type Props = {
-  SvgComponent: () => JSX.Element,
-  name: string,
-  active?: boolean,
-  handleSelectPlatform: (string) => void
-  id: string
-}
-const GenreBlock = ({ SvgComponent, name, active, handleSelectPlatform, id }: Props) => {
+  SvgComponent: () => JSX.Element;
+  name: string;
+  active?: boolean;
+  handleSelectPlatform: (arg0: string) => void;
+  id: string;
+};
+const GenreBlock = ({
+  SvgComponent,
+  name,
+  active,
+  handleSelectPlatform,
+  id,
+}: Props) => {
   return (
-    <div className={`${styles.genre} ${active ? styles.active : ''}`} onClick={() => handleSelectPlatform(id)}>
+    <Genre active={active} onClick={() => handleSelectPlatform(id)}>
       <SvgComponent />
 
       <h3>{name}</h3>
-    </div>
+    </Genre>
   );
 };
 

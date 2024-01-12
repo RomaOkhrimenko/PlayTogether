@@ -1,4 +1,7 @@
-.setting_profile_header {
+import styled from 'styled-components';
+import Image from 'next/image';
+
+export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,15 +29,15 @@
       line-height: 28px;
     }
   }
+`;
 
-  &__image {
-    width: 150px;
-    height: 150px;
+export const HeaderImage = styled(Image)`
+  width: 150px;
+  height: 150px;
 
-    @media (max-width: 554px) {
-      width: 120px;
-      height: 120px;
-      display: none;
-    }
+  @media (max-width: 554px) {
+    width: 120px;
+    height: 120px;
+    display: none;
   }
-}
+`;

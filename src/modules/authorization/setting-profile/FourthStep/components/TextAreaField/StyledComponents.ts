@@ -1,4 +1,6 @@
-.textAreaField {
+import styled from 'styled-components';
+
+export const TextArea = styled.div`
   margin-left: 15px;
   width: 100%;
 
@@ -24,18 +26,18 @@
     line-height: 28px;
     margin-bottom: 15px;
   }
+`;
 
-  &_container {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
+export const Container = styled.div`
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
 
-    @media (max-width: 768px) {
-      width: 60%;
-    }
-
-    @media (max-width: 554px) {
-      width: 78%;
-    }
+  @media (max-width: 768px) {
+    width: 60%;
   }
-}
+
+  @media (max-width: 554px) {
+    width: 78%;
+  }
+`;

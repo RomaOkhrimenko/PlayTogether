@@ -1,29 +1,26 @@
-import styles from './index.module.scss';
+import { Platform } from '@/modules/authorization/setting-profile/FirstStep/StyledComponents';
 
 type Props = {
- SvgComponent: () => JSX.Element;
- name: string;
- active?: boolean;
- handleSelectPlatform: (id: string) => void;
- id: string;
+  SvgComponent: () => JSX.Element;
+  name: string;
+  active?: boolean;
+  handleSelectPlatform: (id: string) => void;
+  id: string;
 };
 const PlatformBlock = ({
- SvgComponent,
- name,
- active,
- handleSelectPlatform,
- id,
+  SvgComponent,
+  name,
+  active,
+  handleSelectPlatform,
+  id,
 }: Props) => {
- return (
-  <div
-   className={`${styles.platform} ${active ? styles.active : ''}`}
-   onClick={() => handleSelectPlatform(id)}
-  >
-   <SvgComponent />
+  return (
+    <Platform active={active} onClick={() => handleSelectPlatform(id)}>
+      <SvgComponent />
 
-   <h3>{name}</h3>
-  </div>
- );
+      <h3>{name}</h3>
+    </Platform>
+  );
 };
 
 export default PlatformBlock;

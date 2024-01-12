@@ -1,82 +1,87 @@
 'use client';
 
-import styles from './form.module.scss';
 import { useState } from 'react';
 import Link from 'next/link';
 import InputText from '@/components/ui/FormElements/Inputs/FormInputText';
 import { useForm } from 'react-hook-form';
 import AnimationWall from '@/components/animations/transitions/AnimationWall';
 import {
- emailReactHookFormField,
- passwordReactHookFormField,
+  emailReactHookFormField,
+  passwordReactHookFormField,
 } from '@/modules/authorization/login/constants';
+import {
+  ButtonContainer,
+  Form,
+  FormSection,
+  FormSupport,
+} from '@/modules/authorization/login/StyledComponents';
 
 const LoginForm = () => {
- const {
-  register,
-  handleSubmit,
-  formState: { errors },
- } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
- const [success, setSuccess] = useState(false);
- const onSubmit = async () => {
-  setSuccess(true);
- };
+  const [success, setSuccess] = useState(false);
+  const onSubmit = async () => {
+    setSuccess(true);
+  };
 
- const emailRegistrationField = {
-  ...register(emailReactHookFormField.inputType, {
-   required: emailReactHookFormField.requiredText,
-   pattern: emailReactHookFormField.emailPattern,
-  }),
- };
+  const emailRegistrationField = {
+    ...register(emailReactHookFormField.inputType, {
+      required: emailReactHookFormField.requiredText,
+      pattern: emailReactHookFormField.emailPattern,
+    }),
+  };
 
- const passwordRegistrationField = {
-  ...register(passwordReactHookFormField.inputType, {
-   required: passwordReactHookFormField.requiredText,
-  }),
- };
+  const passwordRegistrationField = {
+    ...register(passwordReactHookFormField.inputType, {
+      required: passwordReactHookFormField.requiredText,
+    }),
+  };
 
- return (
-  <div className={styles.form}>
-   <h1>Вхід</h1>
-   <form onSubmit={handleSubmit(onSubmit)} name={'Login Form'} noValidate>
-    <div className={styles.form_section}>
-     <InputText
-      register={emailRegistrationField}
-      label={'Електронна адреса'}
-      type="email"
-      error={errors?.email?.message}
-     />
-    </div>
+  return (
+    <Form>
+      <h1>Вхід</h1>
+      <form onSubmit={handleSubmit(onSubmit)} name={'Login Form'} noValidate>
+        <FormSection>
+          <InputText
+            register={emailRegistrationField}
+            label={'Електронна адреса'}
+            type="email"
+            error={errors?.email?.message}
+          />
+        </FormSection>
 
-    <div className={styles.form_section}>
-     <InputText
-      register={passwordRegistrationField}
-      label={'Пароль'}
-      isSecure
-      type={'password'}
-      error={errors?.password?.message}
-     />
-    </div>
+        <FormSection>
+          <InputText
+            register={passwordRegistrationField}
+            label={'Пароль'}
+            isSecure
+            type={'password'}
+            error={errors?.password?.message}
+          />
+        </FormSection>
 
-    <div className={styles.form_support}>
-     <Link href={'/authorization/forgot-password'}>Забули пароль?</Link>
+        <FormSupport>
+          <Link href={'/authorization/forgot-password'}>Забули пароль?</Link>
 
-     <div>
-      <span>Немає облікового запису?</span>
-      <br />
-      <Link href={'/authorization/registration'}>Зареєструватись</Link>
-     </div>
-    </div>
+          <div>
+            <span>Немає облікового запису?</span>
+            <br />
+            <Link href={'/authorization/registration'}>Зареєструватись</Link>
+          </div>
+        </FormSupport>
 
-    <div className={styles.form_button__container}>
-     <button type="submit">Увійти</button>
-    </div>
-   </form>
+        <ButtonContainer>
+          <button type="submit">Увійти</button>
+        </ButtonContainer>
+      </form>
 
-   {success && <AnimationWall />}
-  </div>
- );
+      {success && <AnimationWall />}
+    </Form>
+  );
 };
 
 export default LoginForm;
