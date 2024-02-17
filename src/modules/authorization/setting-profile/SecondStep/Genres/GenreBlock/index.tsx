@@ -1,4 +1,5 @@
 import { Genre } from '@/modules/authorization/setting-profile/SecondStep/StyledComponents';
+import { JSX } from 'react';
 
 type Props = {
   SvgComponent: () => JSX.Element;
