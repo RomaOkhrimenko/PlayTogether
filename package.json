@@ -11,7 +11,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky init"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -38,6 +39,7 @@
     "@typescript-eslint/parser": "^6.7.3",
     "eslint": "^8.50.0",
     "eslint-config-next": "^13.5.3",
+    "husky": "^9.0.11",
     "prettier": "^3.2.5",
     "typescript": "^5.2.2"
   }
