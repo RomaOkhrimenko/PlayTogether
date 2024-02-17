@@ -27,12 +27,12 @@ const Genres = ({ setGenres, savedGenres }: Props) => {
 
   const handleSelectedPlatforms = (platformId: string) => {
     const platformIndex = selectedPlatforms.findIndex(
-      (id) => id === platformId,
+      (id) => id === platformId
     );
 
     if (platformIndex !== -1) {
       const newSelectedPlatforms = selectedPlatforms.filter(
-        (id) => id !== platformId,
+        (id) => id !== platformId
       );
 
       setSelectedPlatforms((prev) => newSelectedPlatforms);

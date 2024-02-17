@@ -1,20 +1,20 @@
 import { emailRegExp } from '@/utils/regexps';
 
 export const emailReactHookFormField = {
- emailPattern: {
-  value: emailRegExp,
-  message: 'Будь ласка, введіть дійсну електронну адресу',
- },
- inputType: 'email',
- requiredText: 'Необхідно вести електорну адресу',
+  emailPattern: {
+    value: emailRegExp,
+    message: 'Будь ласка, введіть дійсну електронну адресу',
+  },
+  inputType: 'email',
+  requiredText: 'Необхідно вести електорну адресу',
 };
 
 export const passwordReactHookFormField = {
- inputType: 'password',
- requiredText: 'Необхідно вести пароль',
+  inputType: 'password',
+  requiredText: 'Необхідно вести пароль',
 };
 
 export const confirmPasswordReactHookFormField = {
- inputType: 'confirmPassword',
- requiredText: 'Необіхдно підтвердити пароль',
+  inputType: 'confirmPassword',
+  requiredText: 'Необіхдно підтвердити пароль',
 };

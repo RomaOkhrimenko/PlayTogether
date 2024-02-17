@@ -57,7 +57,9 @@ export const Platform = styled.div<{ active?: boolean }>`
   align-items: center;
   background-color: var(--dark-color);
   border-radius: 5px;
-  transition: transform 0.3s, border 0.3s;
+  transition:
+    transform 0.3s,
+    border 0.3s;
   cursor: pointer;
   border: 1px solid transparent;
   position: relative;

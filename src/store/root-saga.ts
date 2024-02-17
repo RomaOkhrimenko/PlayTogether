@@ -3,7 +3,7 @@ import { watchSettingsProfileSaga } from '@/store/setting-profile/sagas';
 
 const rootSaga = function* () {
   yield all([
-    fork(watchSettingsProfileSaga)
+    fork(watchSettingsProfileSaga),
     // Other forks
   ]);
 };

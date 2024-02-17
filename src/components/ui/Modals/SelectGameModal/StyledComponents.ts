@@ -9,7 +9,8 @@ export const SelectGameModalWrapper = styled.div`
   border-radius: 15px;
   border: 0.5px solid var(--green-color);
   background: var(--dark-color);
-  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.25),
+  box-shadow:
+    0 0 25px 0 rgba(0, 0, 0, 0.25),
     0 0 15px 0 rgba(20, 255, 72, 0.15) inset;
 `;
 
@@ -94,7 +95,9 @@ export const SelectGameModalButtonContainer = styled.div`
 export const SelectGameBlockContainer = styled.div<{ active: boolean }>`
   border-radius: 10px;
   border: 1px solid transparent;
-  transition: border 0.3s, transform 0.3s;
+  transition:
+    border 0.3s,
+    transform 0.3s;
   cursor: pointer;
 
   ${({ active }) =>

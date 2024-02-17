@@ -40,8 +40,10 @@ export const Form = styled.div`
   z-index: 100;
   border-radius: 15px;
   border: 0.5px solid #00f580;
-  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.25),
-    0 0 15px 0 rgba(20, 255, 72, 0.15) inset, 0 0 45px 0 rgba(0, 0, 0, 0.35);
+  box-shadow:
+    0 0 25px 0 rgba(0, 0, 0, 0.25),
+    0 0 15px 0 rgba(20, 255, 72, 0.15) inset,
+    0 0 45px 0 rgba(0, 0, 0, 0.35);
 
   @media (max-width: 994px) {
     padding: 30px;

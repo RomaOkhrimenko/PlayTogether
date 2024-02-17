@@ -46,6 +46,7 @@ const ForgotPassword = () => {
           For security reasons, we do NOT store your password. So rest assured
           that we will never send your password via email.
         </p>
+        {/*@ts-ignore*/}
         <Form onSubmit={handleSubmit(onSubmit)}>
           <InputText
             type={'email'}

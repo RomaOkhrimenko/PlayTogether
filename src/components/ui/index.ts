@@ -12,5 +12,5 @@ export {
   Input,
   ModalWrapper,
   SelectGameModal,
-  Button
+  Button,
 };

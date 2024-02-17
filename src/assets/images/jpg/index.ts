@@ -21,5 +21,5 @@ export {
   ApexLegends,
   FortnitePc,
   MinecraftPc,
-  HeartStone
+  HeartStone,
 };

@@ -17,11 +17,9 @@ export {
   SmartphonePlatformSvg,
   XboxPlatformSvg,
   InputStarSvg,
-
   ActionGenre,
   AdventureGenre,
   FightGenre,
   RpgGenre,
-
-  SearchSvg
+  SearchSvg,
 };

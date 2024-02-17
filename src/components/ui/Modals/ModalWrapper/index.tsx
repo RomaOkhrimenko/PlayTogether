@@ -19,7 +19,7 @@ const ModalContainer = ({ open, children }: Props) => {
   return mounted && ref.current
     ? createPortal(
         <ModalWrapper active={open}>{children}</ModalWrapper>,
-        ref.current!,
+        ref.current!
       )
     : null;
 };

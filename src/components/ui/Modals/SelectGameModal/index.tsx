@@ -38,7 +38,7 @@ const SelectGameModal = ({
 
     if (index !== -1) {
       const newSelectedGames = selectedUnSaveGames.filter(
-        (item) => item.id !== game.id,
+        (item) => item.id !== game.id
       );
       setSelectedUnSaveGames(newSelectedGames);
       return;

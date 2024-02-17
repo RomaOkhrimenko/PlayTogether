@@ -1,24 +1,6 @@
 {
-  "semi": true,
-  "useTabs": false,
-  "singleQuote": true,
+  "trailingComma": "es5",
   "tabWidth": 2,
-  "trailingComma": "all",
-  "arrowParens": "always",
-  "overrides": [
-    {
-      "files": [
-        "constants.js",
-        "permissions.js",
-        "messages.js",
-        "app/containers/App/index.js",
-        "app/config/routes/index.js",
-        "app/config/environment/*",
-        "*Router.js"
-      ],
-      "options": {
-        "printWidth": 150
-      }
-    }
-  ]
+  "semi": true,
+  "singleQuote": true
 }

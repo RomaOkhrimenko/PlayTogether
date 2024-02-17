@@ -1,4 +1,5 @@
 import { Platform } from '@/modules/authorization/setting-profile/FirstStep/StyledComponents';
+import { JSX } from 'react';
 
 type Props = {
   SvgComponent: () => JSX.Element;

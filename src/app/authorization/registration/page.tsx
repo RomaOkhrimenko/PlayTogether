@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import RegistrationForm from '@/modules/authorization/registration/';
 
 export const metadata: Metadata = {
-  title: 'Registration | PlayTogether UA'
+  title: 'Registration | PlayTogether UA',
 };
 
 const Registration = () => {
