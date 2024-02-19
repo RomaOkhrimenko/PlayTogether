@@ -2,7 +2,6 @@
 import SettingProfileHeader from '../components/Header';
 import HeaderImage from '@/assets/images/png/authorization/three-hand-with-pencil.png';
 import Genres from '@/modules/authorization/setting-profile/SecondStep/Genres';
-import StepButton from '../components/StepButton';
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { setGenresAction } from '@/modules/authorization/setting-profile/actions/genres';
@@ -11,6 +10,7 @@ import {
   GenresWrapper,
   Step,
 } from '@/modules/authorization/setting-profile/SecondStep/StyledComponents';
+import { Button } from '@/components/ui';
 
 type Props = {
   nextStep: () => void;
@@ -43,12 +43,11 @@ const StepOne = ({ nextStep, backStep }: Props) => {
       </GenresWrapper>
 
       <ButtonContainer>
-        <StepButton onClick={backStep} name={'Назад'} />
-        <StepButton
+        <Button onClick={backStep} label={'Назад'} theme={'outline'} />
+        <Button
           onClick={onSave}
-          name={'Далі'}
-          accent
-          disable={!selectedGenres.length}
+          label={'Далі'}
+          isDisabled={!selectedGenres.length}
         />
       </ButtonContainer>
     </Step>

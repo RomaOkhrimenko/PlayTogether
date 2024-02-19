@@ -13,11 +13,6 @@ export const File = styled.div`
   }
 `;
 
-export const Container = styled.div`
-  display: flex;
-  align-items: flex-start;
-`;
-
 export const AddButton = styled.label`
   display: block;
   padding: 10px;

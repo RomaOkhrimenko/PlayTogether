@@ -101,7 +101,7 @@ const SelectGameModal = ({
         </SelectGameModalGamesList>
       </div>
       <SelectGameModalButtonContainer>
-        <Button onClick={onSave} text={'Збергти'} />
+        <Button onClick={onSave} label={'Збергти'} />
       </SelectGameModalButtonContainer>
     </SelectGameModalWrapper>
   );

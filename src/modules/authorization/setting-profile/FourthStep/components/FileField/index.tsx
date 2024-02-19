@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import FieldNumber from '@/modules/authorization/setting-profile/FourthStep/components/FieldNumber';
 
 import { FaTrash } from 'react-icons/fa';
 import {
   AddButton,
-  Container,
   File,
   FilePreview,
 } from '@/modules/authorization/setting-profile/FourthStep/components/FileField/StyledComponents';
+import SettingProfileElementLayout from '@/modules/authorization/setting-profile/FourthStep/layout/SettingProfileElementLayout';
+import { FieldNumberState } from '@/modules/authorization/setting-profile/FourthStep/components/FieldNumber/types';
 
 type Props = {
   register: any;
@@ -17,7 +17,7 @@ type Props = {
   number: string;
   value: FileList;
   setValue: (arg1: string, arg2: any) => any;
-  onValidateField: (arg1: FileList | null) => string;
+  onValidateField: (arg1: FileList | null) => FieldNumberState;
 };
 
 const FileField = ({
@@ -29,7 +29,7 @@ const FileField = ({
   onValidateField,
   setValue,
 }: Props) => {
-  const [state, setState] = useState('text');
+  const [state, setState] = useState<FieldNumberState>('text');
   const [imagePreview, setImagePreview] = useState<string | null>('');
 
   useEffect(() => {
@@ -44,7 +44,6 @@ const FileField = ({
     const reader = new FileReader();
 
     reader.onloadend = () => {
-      console.log(reader);
       setImagePreview(reader.result!.toString());
     };
 
@@ -57,11 +56,7 @@ const FileField = ({
   };
 
   return (
-    <Container>
-      <div>
-        <FieldNumber state={state} text={number} />
-      </div>
-
+    <SettingProfileElementLayout fieldNumber={number} fieldState={state}>
       <File>
         <h4>{fieldName}</h4>
         <input
@@ -105,7 +100,7 @@ const FileField = ({
           </FilePreview>
         )}
       </File>
-    </Container>
+    </SettingProfileElementLayout>
   );
 };
 

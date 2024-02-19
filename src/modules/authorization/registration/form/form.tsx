@@ -16,6 +16,7 @@ import {
   FormSection,
   FormSupport,
 } from '@/modules/authorization/registration/StyledComponents';
+import { Button } from '@/components/ui';
 
 const RegistrationForm = () => {
   const {
@@ -101,7 +102,7 @@ const RegistrationForm = () => {
         </FormSupport>
 
         <ButtonContainer>
-          <button type="submit">Увійти</button>
+          <Button type={'submit'} label={'Зарегеструватися'} />
         </ButtonContainer>
       </form>
 

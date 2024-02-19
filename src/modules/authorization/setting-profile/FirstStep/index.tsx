@@ -2,7 +2,6 @@
 import SettingProfileHeader from '../components/Header';
 import HeaderImage from '@/assets/images/png/authorization/three-hand-with-pencil.png';
 import Platforms from '@/modules/authorization/setting-profile/FirstStep/Platforms';
-import StepButton from '../components/StepButton';
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { setPlatformsAction } from '@/modules/authorization/setting-profile/actions/platforms';
@@ -11,6 +10,7 @@ import {
   PlatformsContainer,
   Step,
 } from '@/modules/authorization/setting-profile/FirstStep/StyledComponents';
+import { Button } from '@/components/ui';
 
 type Props = {
   nextStep: () => void;
@@ -46,11 +46,11 @@ const FirstStep = ({ nextStep }: Props) => {
       </PlatformsContainer>
 
       <ButtonContainer>
-        <StepButton
+        <Button
           onClick={onSubmit}
-          name={'Далі'}
-          accent
-          disable={!selectedPlatforms.length}
+          label={'Далі'}
+          theme={'primary'}
+          isDisabled={!selectedPlatforms.length}
         />
       </ButtonContainer>
     </Step>

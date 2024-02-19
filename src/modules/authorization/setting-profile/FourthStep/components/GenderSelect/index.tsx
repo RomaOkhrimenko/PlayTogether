@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import GenderBlock from '@/modules/authorization/setting-profile/FourthStep/components/GenderSelect/GenderBlock';
-import FieldNumber from '@/modules/authorization/setting-profile/FourthStep/components/FieldNumber';
 
 import MaleImage from '@/assets/images/png/genders/male.png';
 import FemaleImage from '@/assets/images/png/genders/female.png';
 import OtherImage from '@/assets/images/png/genders/other.png';
 import {
-  Container,
   Options,
   Select,
 } from '@/modules/authorization/setting-profile/FourthStep/components/GenderSelect/StyledComponents';
+import SettingProfileElementLayout from '@/modules/authorization/setting-profile/FourthStep/layout/SettingProfileElementLayout';
+import { FieldNumberState } from '@/modules/authorization/setting-profile/FourthStep/components/FieldNumber/types';
 
 type Props = {
   register: any;
@@ -18,7 +18,7 @@ type Props = {
   inputType: string;
   number: string;
   value: string;
-  onValidateField: (arg1: number | null) => string;
+  onValidateField: (arg1: number | null) => FieldNumberState;
 };
 
 const genders = [
@@ -27,7 +27,7 @@ const genders = [
   { id: 3, image: OtherImage },
 ];
 const GenderSelect = ({ onValidateField, number, value, fieldName }: Props) => {
-  const [fieldState, setFieldState] = useState('text');
+  const [fieldState, setFieldState] = useState<FieldNumberState>('text');
   const [chosenGender, setChosenGender] = useState<null | number>(3);
 
   useEffect(() => {
@@ -41,11 +41,7 @@ const GenderSelect = ({ onValidateField, number, value, fieldName }: Props) => {
   };
 
   return (
-    <Container>
-      <div>
-        <FieldNumber state={fieldState} text={number} />
-      </div>
-
+    <SettingProfileElementLayout fieldNumber={number} fieldState={fieldState}>
       <Select>
         <h4>{fieldName}</h4>
         <Options>
@@ -60,7 +56,7 @@ const GenderSelect = ({ onValidateField, number, value, fieldName }: Props) => {
           ))}
         </Options>
       </Select>
-    </Container>
+    </SettingProfileElementLayout>
   );
 };
 

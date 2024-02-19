@@ -4,6 +4,7 @@ export const InputTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
 `;
 
 export const InputTextTitle = styled.div`
@@ -53,6 +54,8 @@ export const InputTextContainer = styled.div`
 `;
 
 export const InputTextError = styled.span`
+  position: absolute;
+  bottom: -20px;
   font-size: 1.3rem;
   color: red;
   margin-top: 0.5rem;

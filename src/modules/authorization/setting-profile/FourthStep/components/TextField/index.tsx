@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import FieldNumber from '@/modules/authorization/setting-profile/FourthStep/components/FieldNumber';
 import InputText from '@/components/ui/FormElements/Inputs/FormInputText';
 import {
-  Container,
   StyledTextField,
 } from '@/modules/authorization/setting-profile/FourthStep/components/TextField/StyledComponents';
+import SettingProfileElementLayout
+  from '@/modules/authorization/setting-profile/FourthStep/layout/SettingProfileElementLayout';
+import { FieldNumberState } from '@/modules/authorization/setting-profile/FourthStep/components/FieldNumber/types';
 
 type Props = {
   register: any;
@@ -16,21 +17,21 @@ type Props = {
   placeholder: string;
   number: string;
   value: string;
-  onValidateField?: () => string;
+  onValidateField?: () => FieldNumberState;
 };
 const TextField = ({
-  fieldName,
-  register,
-  inputType,
-  requiredText,
-  pattern,
-  error,
-  placeholder,
-  number,
-  value,
-  onValidateField,
-}: Props) => {
-  const [fieldState, setFieldState] = useState('text');
+                     fieldName,
+                     register,
+                     inputType,
+                     requiredText,
+                     pattern,
+                     error,
+                     placeholder,
+                     number,
+                     value,
+                     onValidateField,
+                   }: Props) => {
+  const [fieldState, setFieldState] = useState<FieldNumberState>('text');
 
   useEffect(() => {
     if (onValidateField) {
@@ -39,10 +40,7 @@ const TextField = ({
   }, [value]);
 
   return (
-    <Container>
-      <div>
-        <FieldNumber state={fieldState} text={number} />
-      </div>
+    <SettingProfileElementLayout fieldNumber={number} fieldState={fieldState}>
       <StyledTextField>
         <h4>{fieldName}</h4>
         <InputText
@@ -55,7 +53,8 @@ const TextField = ({
           placeholder={placeholder}
         />
       </StyledTextField>
-    </Container>
+    </SettingProfileElementLayout>
+
   );
 };
 ``;

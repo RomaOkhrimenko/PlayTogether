@@ -7,12 +7,12 @@ import { fields } from '@/modules/authorization/setting-profile/FourthStep/const
 import GenderSelect from '@/modules/authorization/setting-profile/FourthStep/components/GenderSelect';
 import FileField from '@/modules/authorization/setting-profile/FourthStep/components/FileField';
 import TextAreaField from '@/modules/authorization/setting-profile/FourthStep/components/TextAreaField';
-import StepButton from '@/modules/authorization/setting-profile/components/StepButton';
 import {
   ButtonsContainer,
   Container,
   Step,
 } from '@/modules/authorization/setting-profile/FourthStep/StyledComponents';
+import { Button } from '@/components/ui';
 
 type Props = {
   onSubmitSettingProfile: SubmitHandler<any>;
@@ -140,12 +140,11 @@ const FourthStep = ({ onSubmitSettingProfile, backStep }: Props) => {
       </Container>
 
       <ButtonsContainer>
-        <StepButton onClick={backStep} name={'Назад'} />
-        <StepButton
+        <Button onClick={backStep} label={'Назад'} theme={'outline'} />
+        <Button
           onClick={handleSubmit(onSubmitSettingProfile)}
-          name={'Далі'}
-          accent
-          disable={false}
+          label={'Далі'}
+          isDisabled={false}
         />
       </ButtonsContainer>
     </Step>

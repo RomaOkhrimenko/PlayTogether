@@ -76,20 +76,6 @@ export const SelectGameModalButtonContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: flex-end;
-
-  button {
-    color: var(--dark-color);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 20px;
-
-    border-radius: 10px;
-    background: var(--green-color);
-    /* Тень */
-    box-shadow: 0 4px 15px 0 rgba(108, 108, 108, 0.15);
-
-    padding: 2rem 4rem;
-  }
 `;
 
 export const SelectGameBlockContainer = styled.div<{ active: boolean }>`

@@ -27,17 +27,3 @@ export const TextArea = styled.div`
     margin-bottom: 15px;
   }
 `;
-
-export const Container = styled.div`
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    width: 60%;
-  }
-
-  @media (max-width: 554px) {
-    width: 78%;
-  }
-`;

@@ -99,12 +99,4 @@ export const FormSupport = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-
-  button {
-    border-radius: 1rem;
-    background: #00f580;
-    padding: 20px 40px;
-    font-size: 16px;
-    font-weight: 600;
-  }
 `;

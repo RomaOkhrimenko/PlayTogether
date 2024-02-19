@@ -4,9 +4,8 @@ import HeaderImage from '@/assets/images/png/authorization/three-hand-with-penci
 import { useState } from 'react';
 import SelectedGames from '@/modules/authorization/setting-profile/ThirdStep/SelectedGames';
 import AddGamesButton from '@/components/ui/AddGamesButton';
-import StepButton from '../components/StepButton';
 import ModalContainer from '@/components/ui/Modals/ModalWrapper';
-import { SelectGameModal } from '@/components/ui';
+import { Button, SelectGameModal } from '@/components/ui';
 import {
   ApexLegends,
   Cs2Image,
@@ -96,12 +95,11 @@ const StepThree = ({ nextStep, backStep }: Props) => {
         <AddGamesButton onClick={onOpenSelectGameModal} />
 
         <ButtonsNavigation>
-          <StepButton onClick={backStep} name={'Назад'} />
-          <StepButton
+          <Button onClick={backStep} label={'Назад'} theme={'outline'} />
+          <Button
             onClick={nextStep}
-            name={'Далі'}
-            accent
-            disable={!selectedGames.length}
+            label={'Далі'}
+            isDisabled={!selectedGames.length}
           />
         </ButtonsNavigation>
       </ButtonsContainer>

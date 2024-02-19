@@ -15,6 +15,7 @@ import {
   FormSection,
   FormSupport,
 } from '@/modules/authorization/login/StyledComponents';
+import { Button } from '@/components/ui';
 
 const LoginForm = () => {
   const {
@@ -75,7 +76,7 @@ const LoginForm = () => {
         </FormSupport>
 
         <ButtonContainer>
-          <button type="submit">Увійти</button>
+          <Button type="submit" label={'Увійти'} />
         </ButtonContainer>
       </form>
 

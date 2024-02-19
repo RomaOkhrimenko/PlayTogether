@@ -1,16 +1,30 @@
 import React from 'react';
+import { StyledButton } from '@/components/ui/Button/StyledComponent';
 
 type Props = {
-  onClick: () => void;
-  text: string;
+  onClick?: () => void;
+  label: string;
   type?: 'button' | 'submit' | 'reset';
+  theme?: 'primary' | 'outline';
+  isDisabled?: boolean;
 };
 
-const Button = ({ onClick, text, type = 'button' }: Props) => {
+const Button = ({
+  onClick,
+  label,
+  type = 'button',
+  theme = 'primary',
+  isDisabled = false,
+}: Props) => {
   return (
-    <button type={type} onClick={onClick}>
-      {text}
-    </button>
+    <StyledButton
+      theme={theme}
+      type={type}
+      onClick={onClick}
+      isDisabled={isDisabled}
+    >
+      {label}
+    </StyledButton>
   );
 };
 

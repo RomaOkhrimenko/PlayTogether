@@ -5,9 +5,10 @@ import {
   Number,
   Text,
 } from '@/modules/authorization/setting-profile/FourthStep/components/FieldNumber/StyledComponents';
+import { FieldNumberState } from '@/modules/authorization/setting-profile/FourthStep/components/FieldNumber/types';
 
 type Props = {
-  state: string;
+  state: FieldNumberState;
   text: string;
 };
 const FieldNumber = ({ state = 'number', text }: Props) => {

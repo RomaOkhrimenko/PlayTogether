@@ -14,11 +14,6 @@ export const Select = styled.div`
   }
 `;
 
-export const Container = styled.div`
-  display: flex;
-  align-items: flex-start;
-`;
-
 export const Options = styled.div`
   display: flex;
   align-items: center;

@@ -56,7 +56,7 @@ const ForgotPassword = () => {
           />
 
           <ButtonContainer>
-            <Button type={'submit'} onClick={() => {}} text={'Відправити'} />
+            <Button type={'submit'} onClick={() => {}} label={'Відправити'} />
           </ButtonContainer>
         </Form>
       </Container>
