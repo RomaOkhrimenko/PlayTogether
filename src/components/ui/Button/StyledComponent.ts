@@ -27,6 +27,8 @@ export const StyledButton = styled.button<{
     isDisabled &&
     css`
       background-color: var(--gray-color) !important;
+      border: 1px solid transparent !important;
+      color: var(--dark-color);
       pointer-events: none;
     `};
 `;

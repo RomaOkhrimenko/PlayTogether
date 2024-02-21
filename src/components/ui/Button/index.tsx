@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledButton } from '@/components/ui/Button/StyledComponent';
+import { StyledButton } from './StyledComponent';
 
 type Props = {
   onClick?: () => void;
@@ -11,7 +11,7 @@ type Props = {
 
 const Button = ({
   onClick,
-  label,
+  label = 'Button',
   type = 'button',
   theme = 'primary',
   isDisabled = false,
