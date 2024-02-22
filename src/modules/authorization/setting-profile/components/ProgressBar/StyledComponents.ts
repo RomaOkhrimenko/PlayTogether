@@ -16,9 +16,12 @@ export const Bar = styled.div`
 `;
 
 export const Step = styled.div`
+  display: flex;
+  align-items: center;
+
   span {
     color: var(--gray-color);
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 600;
     margin-right: 10px;
   }

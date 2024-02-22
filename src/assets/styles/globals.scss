@@ -70,18 +70,26 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border m-0 p-0;
   }
 
   body {
     @apply bg-background text-foreground w-screen h-screen overflow-x-hidden;
   }
+
+  input {
+    @apply outline-none border-none
+  }
+
+  textarea {
+    @apply border-none outline-none
+  }
+
+  button {
+    @apply outline-none border-none cursor-pointer
+  }
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
-  width: 100vw;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background-color: var(--main-bg);
 }

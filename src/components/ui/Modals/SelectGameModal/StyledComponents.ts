@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const SelectGameModalWrapper = styled.div`
   position: relative;
-  padding: 4.5rem 3.5rem;
+  padding: 45px 35px;
   max-width: 1200px;
 
   border-radius: 15px;
@@ -25,13 +25,13 @@ export const CloseButton = styled.button`
 
 export const SelectGameModalTitle = styled.h4`
   color: var(--color-white);
-  font-size: 2rem;
+  font-size: 20px;
   font-weight: 800;
   line-height: 28px;
   margin-bottom: 25px;
 
   @media (max-width: 554px) {
-    font-size: 1.8rem;
+    font-size: 18px;
     line-height: 25px;
   }
 `;
@@ -52,7 +52,7 @@ export const SelectGameModalSearch = styled.div`
   input {
     width: 100%;
     color: var(--dark-color);
-    font-size: 1.5rem;
+    font-size: 15px;
     font-weight: 600;
     line-height: 21px;
   }

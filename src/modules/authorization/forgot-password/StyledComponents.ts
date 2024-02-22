@@ -27,7 +27,7 @@ export const Container = styled.div`
   max-width: 600px;
   width: 100%;
 
-  padding: 6.5rem;
+  padding: 65px;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
   border-radius: 15px;
@@ -79,7 +79,7 @@ export const ButtonContainer = styled.div`
   margin-top: 20px;
 
   button {
-    border-radius: 1rem;
+    border-radius: 10px;
     background: #00f580;
     padding: 20px 40px;
     font-size: 16px;

@@ -10,10 +10,10 @@ export const InputTextWrapper = styled.div`
 export const InputTextTitle = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 
   & > label {
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 600;
     color: #fff;
     letter-spacing: -0.08px;
@@ -22,7 +22,7 @@ export const InputTextTitle = styled.div`
   svg {
     color: var(--green-color);
     margin-right: 10px;
-    font-size: 1.6rem;
+    font-size: 16px;
     line-height: 10px;
   }
 `;
@@ -43,7 +43,7 @@ export const InputTextContainer = styled.div`
     background-color: transparent;
     width: 100%;
     padding: 15px;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 500;
   }
 
@@ -56,7 +56,7 @@ export const InputTextContainer = styled.div`
 export const InputTextError = styled.span`
   position: absolute;
   bottom: -20px;
-  font-size: 1.3rem;
+  font-size: 13px;
   color: red;
-  margin-top: 0.5rem;
+  margin-top: 5px;
 `;

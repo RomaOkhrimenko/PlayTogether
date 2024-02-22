@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Button = styled.button`
   display: flex;
   align-items: center;
-  padding: 1.7rem 4rem;
+  padding: 17px 40px;
   background: transparent;
   height: fit-content;
 
@@ -24,11 +24,11 @@ export const Button = styled.button`
 
   span {
     color: var(--color-white);
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 600;
     line-height: 21px;
     white-space: nowrap;
-    margin-right: 2rem;
+    margin-right: 20px;
     transition: color 0.3s;
   }
 

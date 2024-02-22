@@ -19,13 +19,13 @@ export const Header = styled.header`
   h2 {
     margin-top: 15px;
     color: var(--color-white);
-    font-size: 3.2rem;
+    font-size: 32px;
     font-weight: 800;
     line-height: 44.8px; /* 44.8px */
     text-align: center;
 
     @media (max-width: 554px) {
-      font-size: 2.6rem;
+      font-size: 26px;
       line-height: 28px;
     }
   }

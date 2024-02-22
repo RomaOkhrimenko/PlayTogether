@@ -40,7 +40,7 @@ export const Form = styled.div`
   flex-direction: column;
   width: 100%;
 
-  padding: 6.5rem;
+  padding: 65px;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
   border-radius: 15px;
@@ -71,7 +71,7 @@ export const FormSection = styled.div`
 export const FormSupport = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 3.5rem;
+  margin-bottom: 35px;
 
   @media (max-width: 554px) {
     flex-direction: column;
@@ -80,7 +80,7 @@ export const FormSupport = styled.div`
 
   a {
     color: #00f580;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     height: fit-content;
@@ -89,7 +89,7 @@ export const FormSupport = styled.div`
   span {
     display: inline-block;
     color: #a2a2a2;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 500;
     margin-bottom: 5px;
   }
