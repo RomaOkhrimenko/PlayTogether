@@ -1,9 +1,8 @@
-import { all, fork } from 'redux-saga/effects';
-import { watchSettingsProfileSaga } from '@/store/setting-profile/sagas';
+import { all } from 'redux-saga/effects';
 
 const rootSaga = function* () {
   yield all([
-    fork(watchSettingsProfileSaga),
+    // fork(),
     // Other forks
   ]);
 };

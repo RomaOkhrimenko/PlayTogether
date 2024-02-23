@@ -46,6 +46,7 @@ module.exports = {
         'Security',
         'Changeset',
         'Add',
+        'Delete',
       ],
     ],
   },
