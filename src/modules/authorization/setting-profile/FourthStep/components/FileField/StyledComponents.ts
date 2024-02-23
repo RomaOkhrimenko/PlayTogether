@@ -1,18 +1,5 @@
 import styled from 'styled-components';
 
-export const File = styled.div`
-  margin-left: 15px;
-
-  & > h4 {
-    color: #fff;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px;
-    margin-bottom: 15px;
-  }
-`;
-
 export const AddButton = styled.label`
   display: block;
   padding: 10px;

@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import {
   AddButton,
-  File,
   FilePreview,
 } from '@/modules/authorization/setting-profile/FourthStep/components/FileField/StyledComponents';
 import SettingProfileElementLayout from '@/modules/authorization/setting-profile/FourthStep/layout/SettingProfileElementLayout';
@@ -56,9 +55,12 @@ const FileField = ({
   };
 
   return (
-    <SettingProfileElementLayout fieldNumber={number} fieldState={state}>
-      <File>
-        <h4>{fieldName}</h4>
+    <SettingProfileElementLayout
+      fieldNumber={number}
+      fieldState={state}
+      fieldName={fieldName}
+    >
+      <>
         <input
           type="file"
           id={'fileForSettingAccount'}
@@ -99,7 +101,7 @@ const FileField = ({
             <img src={imagePreview} alt="Profile picture preview" />
           </FilePreview>
         )}
-      </File>
+      </>
     </SettingProfileElementLayout>
   );
 };

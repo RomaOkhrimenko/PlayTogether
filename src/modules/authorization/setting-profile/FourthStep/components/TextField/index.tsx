@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import InputText from '@/components/ui/FormElements/Inputs/FormInputText';
-import {
-  StyledTextField,
-} from '@/modules/authorization/setting-profile/FourthStep/components/TextField/StyledComponents';
 import SettingProfileElementLayout
   from '@/modules/authorization/setting-profile/FourthStep/layout/SettingProfileElementLayout';
 import { FieldNumberState } from '@/modules/authorization/setting-profile/FourthStep/components/FieldNumber/types';
@@ -40,19 +37,16 @@ const TextField = ({
   }, [value]);
 
   return (
-    <SettingProfileElementLayout fieldNumber={number} fieldState={fieldState}>
-      <StyledTextField>
-        <h4>{fieldName}</h4>
-        <InputText
-          type={'text'}
-          register={...register(inputType, {
-            required: requiredText,
-            pattern: pattern,
-          })}
-          error={error}
-          placeholder={placeholder}
-        />
-      </StyledTextField>
+    <SettingProfileElementLayout fieldNumber={number} fieldState={fieldState} fieldName={fieldName}>
+      <InputText
+        type={'text'}
+        register={...register(inputType, {
+          required: requiredText,
+          pattern: pattern,
+        })}
+        error={error}
+        placeholder={placeholder}
+      />
     </SettingProfileElementLayout>
 
   );

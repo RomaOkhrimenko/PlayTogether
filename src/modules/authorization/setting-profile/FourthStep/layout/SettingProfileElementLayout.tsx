@@ -1,16 +1,18 @@
 import { ReactNode } from 'react';
 import FieldNumber from '@/modules/authorization/setting-profile/FourthStep/components/FieldNumber';
-import { Container } from './StyledComponents';
+import { Container, FieldWrapper } from './StyledComponents';
 
 type Props = {
   children: ReactNode;
   fieldNumber: string;
   fieldState: 'text' | 'success' | 'number' | 'loading';
+  fieldName: string;
 };
 const SettingProfileElementLayout = ({
   children,
   fieldNumber,
   fieldState,
+  fieldName,
 }: Props) => {
   return (
     <Container>
@@ -18,7 +20,11 @@ const SettingProfileElementLayout = ({
         <FieldNumber state={fieldState} text={fieldNumber} />
       </div>
 
-      <>{children}</>
+      <FieldWrapper>
+        <h4>{fieldName}</h4>
+
+        {children}
+      </FieldWrapper>
     </Container>
   );
 };

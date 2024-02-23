@@ -51,7 +51,7 @@
 
   .dark {
     --main-background: #060d1e;
-    
+
     --background: #fff;
     // dark color
     --foreground: #1e1e1e;
@@ -89,9 +89,7 @@
 }
 
 @layer base {
-  * {
-    @apply border-border m-0 p-0;
-  }
+
 
   body {
     @apply bg-mainBackground text-foreground w-screen h-screen overflow-x-hidden;
@@ -108,6 +106,12 @@
   button {
     @apply outline-none border-none cursor-pointer
   }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {

@@ -15,12 +15,7 @@ import {
 } from '@/components/shadcn/Popover';
 import { DayPickerSingleProps } from 'react-day-picker';
 
-type Props = {
-  handleDate: (arg1: Date) => void;
-  date: Date;
-};
-
-type DatePickerProps = DayPickerSingleProps & Props;
+type DatePickerProps = DayPickerSingleProps;
 
 export function DatePicker({ mode = 'single' }: DatePickerProps) {
   const [date, setDate] = useState<Date>();
@@ -40,7 +35,7 @@ export function DatePicker({ mode = 'single' }: DatePickerProps) {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">
-        <Calendar mode={mode} selected={date} onSelect={setDate} />
+        <Calendar mode={mode} selected={date} onSelect={setDate} initialFocus />
       </PopoverContent>
     </Popover>
   );

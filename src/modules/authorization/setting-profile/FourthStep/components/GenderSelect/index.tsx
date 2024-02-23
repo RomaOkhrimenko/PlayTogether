@@ -4,10 +4,7 @@ import GenderBlock from '@/modules/authorization/setting-profile/FourthStep/comp
 import MaleImage from '@/assets/images/png/genders/male.png';
 import FemaleImage from '@/assets/images/png/genders/female.png';
 import OtherImage from '@/assets/images/png/genders/other.png';
-import {
-  Options,
-  Select,
-} from '@/modules/authorization/setting-profile/FourthStep/components/GenderSelect/StyledComponents';
+import { Options } from '@/modules/authorization/setting-profile/FourthStep/components/GenderSelect/StyledComponents';
 import SettingProfileElementLayout from '@/modules/authorization/setting-profile/FourthStep/layout/SettingProfileElementLayout';
 import { FieldNumberState } from '@/modules/authorization/setting-profile/FourthStep/components/FieldNumber/types';
 
@@ -41,21 +38,22 @@ const GenderSelect = ({ onValidateField, number, value, fieldName }: Props) => {
   };
 
   return (
-    <SettingProfileElementLayout fieldNumber={number} fieldState={fieldState}>
-      <Select>
-        <h4>{fieldName}</h4>
-        <Options>
-          {genders.map(({ id, image }) => (
-            <GenderBlock
-              key={id}
-              image={image}
-              id={id}
-              active={chosenGender === id}
-              onSelectGender={onSelectGender}
-            />
-          ))}
-        </Options>
-      </Select>
+    <SettingProfileElementLayout
+      fieldNumber={number}
+      fieldState={fieldState}
+      fieldName={fieldName}
+    >
+      <Options>
+        {genders.map(({ id, image }) => (
+          <GenderBlock
+            key={id}
+            image={image}
+            id={id}
+            active={chosenGender === id}
+            onSelectGender={onSelectGender}
+          />
+        ))}
+      </Options>
     </SettingProfileElementLayout>
   );
 };

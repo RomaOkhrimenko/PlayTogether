@@ -13,6 +13,7 @@ import {
   Step,
 } from '@/modules/authorization/setting-profile/FourthStep/StyledComponents';
 import { Button } from '@/components/ui';
+import DatePickerField from '@/modules/authorization/setting-profile/FourthStep/components/DatePicker';
 
 type Props = {
   onSubmitSettingProfile: SubmitHandler<any>;
@@ -32,6 +33,7 @@ const FourthStep = ({ onSubmitSettingProfile, backStep }: Props) => {
   const genderValue = watch(fields.gender, false);
   const profilePictureValue = watch(fields.profilePictures, false);
   const bioValue = watch(fields.bio, false);
+  const dobValue = watch(fields.dob, false);
   const onValidateName = () => {
     if (nameValue.length > 0) {
       return 'success';
@@ -68,6 +70,14 @@ const FourthStep = ({ onSubmitSettingProfile, backStep }: Props) => {
 
   const onValidateTextAreaField = () => {
     if (bioValue.length > 0) {
+      return 'success';
+    } else {
+      return 'text';
+    }
+  };
+
+  const onValidateDateOfBirthdayField = (dob: Date | undefined) => {
+    if (dob) {
       return 'success';
     } else {
       return 'text';
@@ -136,6 +146,15 @@ const FourthStep = ({ onSubmitSettingProfile, backStep }: Props) => {
           number={'5'}
           value={bioValue}
           onValidateField={onValidateTextAreaField}
+        />
+
+        <DatePickerField
+          number={'6'}
+          register={register}
+          inputType={fields.dob}
+          fieldName={'Дата Народження'}
+          value={dobValue || new Date()}
+          onValidateField={onValidateDateOfBirthdayField}
         />
       </Container>
 
