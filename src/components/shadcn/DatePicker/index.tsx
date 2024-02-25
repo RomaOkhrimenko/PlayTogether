@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import { useState } from 'react';
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon } from 'lucide-react';
 
@@ -15,11 +14,19 @@ import {
 } from '@/components/shadcn/Popover';
 import { DayPickerSingleProps } from 'react-day-picker';
 
-type DatePickerProps = DayPickerSingleProps;
+type Props = {
+  date: Date | undefined;
+  onChangeDate: (arg1: Date | undefined) => void;
+};
 
-export function DatePicker({ mode = 'single' }: DatePickerProps) {
-  const [date, setDate] = useState<Date>();
+type DatePickerProps = DayPickerSingleProps & Props;
 
+export function DatePicker({
+  mode = 'single',
+  captionLayout = 'buttons',
+  date,
+  onChangeDate,
+}: DatePickerProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -34,8 +41,16 @@ export function DatePicker({ mode = 'single' }: DatePickerProps) {
           {date ? format(date, 'PPP') : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-auto p-0">
-        <Calendar mode={mode} selected={date} onSelect={setDate} initialFocus />
+      <PopoverContent className="w-auto p-0 border-accent">
+        <Calendar
+          mode={mode}
+          fromYear={1900}
+          toYear={2020}
+          selected={date}
+          onSelect={onChangeDate}
+          captionLayout={captionLayout}
+          initialFocus
+        />
       </PopoverContent>
     </Popover>
   );

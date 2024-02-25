@@ -11,6 +11,16 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const DatePickerStory: Story = {
-  args: {},
+export const DatePickerWithButtons: Story = {
+  args: {
+    captionLayout: 'buttons',
+  },
+};
+
+export const DatePickerWithDropdown: Story = {
+  args: {
+    captionLayout: 'dropdown',
+    fromYear: 1900,
+    toYear: 2020,
+  },
 };

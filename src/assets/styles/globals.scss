@@ -11,11 +11,9 @@
 
 @layer base {
   :root {
-
     --main-background: #060d1e;
-    // white color
+
     --background: #fff;
-    // dark color
     --foreground: #1e1e1e;
 
     --card: #1e1e1e;
@@ -33,10 +31,8 @@
     --muted: #b9b9b9;
     --muted-foreground: #1e1e1e;
 
-    // green
     --accent: #00f580;
 
-    //dark
     --accent-foreground: #1e1e1e;
 
     --destructive: red;
@@ -53,7 +49,6 @@
     --main-background: #060d1e;
 
     --background: #fff;
-    // dark color
     --foreground: #1e1e1e;
 
     --card: #1e1e1e;
@@ -71,10 +66,8 @@
     --muted: #b9b9b9;
     --muted-foreground: #1e1e1e;
 
-    // green
     --accent: #00f580;
 
-    //dark
     --accent-foreground: #1e1e1e;
 
     --destructive: red;
@@ -90,6 +83,9 @@
 
 @layer base {
 
+  * {
+    @apply p-0 m-0 box-border
+  }
 
   body {
     @apply bg-mainBackground text-foreground w-screen h-screen overflow-x-hidden;
@@ -108,11 +104,6 @@
   }
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 
 body {
   font-family: 'Montserrat', sans-serif;
