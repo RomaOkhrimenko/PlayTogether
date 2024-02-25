@@ -4,7 +4,16 @@ import { DatePicker } from './index';
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
-  title: 'DatePicker',
+  title: 'Shadcn/DatePicker',
+  parameters: {
+    docs: {
+      description: {
+        component: `
+        Detailed documentation you can find here: https://ui.shadcn.com/docs/components/date-picker
+      `,
+      },
+    },
+  },
 };
 
 export default meta;
