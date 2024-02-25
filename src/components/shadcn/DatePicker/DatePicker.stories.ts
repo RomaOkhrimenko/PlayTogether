@@ -14,6 +14,13 @@ const meta: Meta<typeof DatePicker> = {
       },
     },
   },
+  argTypes: {
+    captionLayout: {
+      // @ts-ignore
+      type: 'select',
+      options: ['buttons', 'dropdown'],
+    },
+  },
 };
 
 export default meta;
